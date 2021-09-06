@@ -1,0 +1,15 @@
+*load regulation
+.inc ../AE01.11.01.002.cir
+.param CBULK=47u
+.param RSER_BULK=0.2
+.param VOFFSET=0
+.param VRMS=230
+.param CREST_FACTOR=SQRT(2)
+.param FREQ=50
+.param VPK=VRMS*CREST_FACTOR
+.param TIME=1/FREQ
+.param CYCLES=6
+.param TOTAL_TIME=TIME*CYCLES
+.step param RLOAD 10000 1000 1000
+.tran 0 {TOTAL_TIME} 0 startup
+.backanno
